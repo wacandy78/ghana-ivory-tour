@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迦納 + 象牙海岸賞鳥探險 - 西非完美行程</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Dm+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(135deg, #f5f1e8 0%, #f0ebe0 100%);
+            color: #2d2620;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a4d3e 0%, #2d7a6b 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 40px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -100px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-30px) translateX(20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Crimson Text', serif;
+            font-size: 4rem;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #f4d9a6;
+            color: #1a4d3e;
+            padding: 16px 48px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'DM Sans', sans-serif;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            background: #fff;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            background: rgba(26, 77, 62, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.8rem;
+            color: #f4d9a6;
+            font-weight: 700;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-left: 40px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f4d9a6;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        section {
+            padding: 100px 40px;
+        }
+
+        .section-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 3rem;
+            color: #1a4d3e;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 30px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #8b9d7f, transparent);
+        }
+
+        /* Park Cards */
+        .parks-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .park-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .park-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .park-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .park-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #2d7a6b, #1a4d3e);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .park-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .park-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26,77,62,0.3), transparent);
+        }
+
+        .park-content {
+            padding: 40px;
+        }
+
+        .park-content h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.2rem;
+            color: #1a4d3e;
+            margin-bottom: 15px;
+        }
+
+        .bird-count {
+            display: inline-block;
+            background: #f0ebe0;
+            color: #8b6f47;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .park-description {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .highlight-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .feature-tag {
+            background: #1a4d3e;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .bird-highlights {
+            background: #f9f6f0;
+            padding: 20px;
+            border-left: 4px solid #8b9d7f;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .bird-highlights p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .bird-highlights p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Comparison Section */
+        .comparison {
+            background: white;
+            padding: 60px;
+            border-radius: 12px;
+            margin: 80px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background: #1a4d3e;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid #e8e1d6;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f9f6f0;
+        }
+
+        .comparison-table tr:hover {
+            background: #f0ebe0;
+        }
+
+        /* Itinerary Section */
+        .itinerary {
+            background: linear-gradient(135deg, #f5f1e8, #e8ddd2);
+            padding: 80px 40px;
+        }
+
+        .itinerary-item {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #8b9d7f;
+            transition: all 0.3s ease;
+        }
+
+        .itinerary-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateX(10px);
+        }
+
+        .day-number {
+            display: inline-block;
+            background: #1a4d3e;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .itinerary-item h4 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            color: #1a4d3e;
+            margin-bottom: 10px;
+        }
+
+        .itinerary-item p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            padding: 80px 40px;
+            background: linear-gradient(135deg, #1a4d3e, #2d7a6b);
+            color: white;
+        }
+
+        .contact h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        footer {
+            background: #0d2818;
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            padding: 30px;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            nav a {
+                margin-left: 20px;
+                display: none;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .parks-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .park-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .comparison {
+                padding: 30px 20px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">🦅 西非賞鳥探險</div>
+        <div>
+            <a href="#parks">公園介紹</a>
+            <a href="#comparison">對比</a>
+            <a href="#itinerary">行程安排</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>西非賞鳥與海濱探險</h1>
+            <p>迦納國家公園的野生動物奇觀 + 象牙海岸的海灘度假與都市文化</p>
+            <button class="cta-button">立即預訂</button>
+        </div>
+    </section>
+
+    <!-- Parks Section -->
+    <section id="parks">
+        <div class="container">
+            <h2 class="section-title">兩大國家公園</h2>
+
+            <div class="parks-grid">
+                <!-- Mole National Park -->
+                <div class="park-card">
+                    <div class="park-image" style="background: linear-gradient(135deg, #2d7a6b, #1a4d3e);">
+                        <img src="https://images.unsplash.com/photo-1516426122078-823edbbf3341?w=800&h=300&fit=crop" alt="莫宗瑞亞國家公園">
+                    </div>
+                    <div class="park-content">
+                        <h3>莫宗瑞亞國家公園</h3>
+                        <span class="bird-count">🦅 多樣化鳥類生態</span>
+                        
+                        <div class="park-description">
+                            位於迦納北部薩瓦納地區，莫宗瑞亞是西非最大的國家公園。園內茂密的森林和遼闊的草原為眾多野生動物提供了完美的棲息地。
+                        </div>
+
+                        <div class="bird-highlights">
+                            <p><strong>主要鳥類：</strong></p>
+                            <p>✓ 各種鷹鷲與獵鷹<br>✓ 鸛鳥和蒼鷺<br>✓ 五彩斑斕的蜂虎<br>✓ 珍稀的戰鷲和非洲雕</p>
+                        </div>
+
+                        <div class="highlight-features">
+                            <span class="feature-tag">🏨 Zaina Lodge</span>
+                            <span class="feature-tag">🚶 專業導遊</span>
+                            <span class="feature-tag">📍 隱蔽觀察點</span>
+                            <span class="feature-tag">🌙 夜間探險</span>
+                        </div>
+
+                        <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                            <strong>體驗亮點：</strong> 每天清晨由專業導遊帶領進行深度森林漫步和野生動物觀察。園內設有多個隱蔽的觀鳥點，距離大象和其他野生動物保持安全距離。住在優雅的樹屋，盡享自然與奢華的完美結合。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kakum National Park -->
+                <div class="park-card">
+                    <div class="park-image" style="background: linear-gradient(135deg, #2d7a6b, #1a4d3e);">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=300&fit=crop" alt="卡庫姆國家公園">
+                    </div>
+                    <div class="park-content">
+                        <h3>卡庫姆國家公園</h3>
+                        <span class="bird-count">🦅 超過 300 種鳥類</span>
+
+                        <div class="park-description">
+                            位於迦納中南部的雨林地區，卡庫姆以其令人驚嘆的 7 條懸空走廊聞名世界。走在距離森林地面 27 公尺高的樹頂上，俯瞰這片古老的雨林生態系統。
+                        </div>
+
+                        <div class="bird-highlights">
+                            <p><strong>主要鳥類：</strong></p>
+                            <p>✓ 華麗的翠鳥<br>✓ 多彩的蜂虎<br>✓ 稀有的夜鷲<br>✓ 吸蜜鳥和啄木鳥</p>
+                        </div>
+
+                        <div class="highlight-features">
+                            <span class="feature-tag">🌳 樹冠走廊</span>
+                            <span class="feature-tag">🔭 遠距望遠鏡觀察</span>
+                            <span class="feature-tag">🌙 夜間生態探險</span>
+                            <span class="feature-tag">📸 攝影天堂</span>
+                        </div>
+
+                        <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                            <strong>體驗亮點：</strong> 穿梭於 333 公尺長的懸空走廊，與鳥類在樹冠層相遇。使用高倍望遠鏡從訪客中心觀察稀有鳥種，或參加引人入勝的夜間生態探險。園內設有露營設施和樹屋住宿，深度體驗原始雨林。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 80px 0 60px; padding: 40px; background: linear-gradient(135deg, #f0ebe0, #e8ddd2); border-radius: 12px;">
+                <h3 style="font-family: 'Crimson Text', serif; font-size: 2.2rem; color: #1a4d3e; margin-bottom: 15px;">延伸探險</h3>
+                <p style="color: #666; font-size: 1.1rem; margin-bottom: 0;">從迦納跨越邊界，深入象牙海岸的海灘與城市魅力</p>
+            </div>
+
+            <div class="parks-grid">
+                <!-- Assinie -->
+                <div class="park-card">
+                    <div class="park-image" style="background: linear-gradient(135deg, #2d7a6b, #1a4d3e);">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=300&fit=crop" alt="Assinie海灘">
+                    </div>
+                    <div class="park-content">
+                        <h3>Assinie - 象牙海岸海灘度假</h3>
+                        <span class="bird-count">🏖️ 沿海生態天堂</span>
+                        
+                        <div class="park-description">
+                            Assinie 是象牙海岸東南部的靜謐海濱小鎮，擁有金黃色沙灘和清澈的大西洋海水。這個度假勝地結合了自然美景與文化特色，是逃離城市喧囂的理想之地。
+                        </div>
+
+                        <div class="bird-highlights">
+                            <p><strong>沿海鳥類：</strong></p>
+                            <p>✓ 鸕鷀和蒼鷺群<br>✓ 魚鷹和海鷲<br>✓ 翠鳥和潛水鳥<br>✓ 沙灘鳶（稀有）</p>
+                        </div>
+
+                        <div class="highlight-features">
+                            <span class="feature-tag">🌊 泻湖生態</span>
+                            <span class="feature-tag">🐚 沿海濕地</span>
+                            <span class="feature-tag">🌅 日出觀賞</span>
+                            <span class="feature-tag">🏨 度假村</span>
+                        </div>
+
+                        <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                            <strong>體驗亮點：</strong> 清晨在泻湖觀賞遷徙水鳥，漫步沙灘尋覓沿海物種。下午在海邊度假村放鬆，享受新鮮海鮮與冷飲。Assinie 是從野生動物探險到悠閒度假的完美轉銜。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abidjan -->
+                <div class="park-card">
+                    <div class="park-image" style="background: linear-gradient(135deg, #2d7a6b, #1a4d3e);">
+                        <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&h=300&fit=crop" alt="Abidjan都市景觀">
+                    </div>
+                    <div class="park-content">
+                        <h3>Abidjan - 象牙海岸現代都市</h3>
+                        <span class="bird-count">🏙️ 西非文化樞紐</span>
+
+                        <div class="park-description">
+                            Abidjan 是象牙海岸最大的城市，也是西非最現代化的都市之一。這座城市坐落在美麗的潟湖之上，融合了當代建築、豐富的文化與充滿活力的夜生活。
+                        </div>
+
+                        <div class="bird-highlights">
+                            <p><strong>城市自然體驗：</strong></p>
+                            <p>✓ Banco 國家公園城市森林<br>✓ 潟湖水鳥觀察<br>✓ 市郊自然保護區<br>✓ 都市公園棲息地</p>
+                        </div>
+
+                        <div class="highlight-features">
+                            <span class="feature-tag">🎨 當代美術館</span>
+                            <span class="feature-tag">🛍️ 現代購物中心</span>
+                            <span class="feature-tag">🍽️ 美食之都</span>
+                            <span class="feature-tag">🌃 夜生活</span>
+                        </div>
+
+                        <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                            <strong>體驗亮點：</strong> 參訪美術館與文化中心探索象牙海岸藝術。在 Banco 國家公園進行城市邊緣賞鳥，發現潟湖邊的野生動物。享受國際美食與購物，感受西非最繁華的都市活力。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison">
+        <div class="container">
+            <h2 class="section-title">公園對比</h2>
+
+            <div class="comparison">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>特性</th>
+                            <th>莫宗瑞亞國家公園</th>
+                            <th>卡庫姆國家公園</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>位置</strong></td>
+                            <td>北部薩瓦納地區</td>
+                            <td>中南部雨林地區</td>
+                        </tr>
+                        <tr>
+                            <td><strong>地形特色</strong></td>
+                            <td>森林 + 草原混合</td>
+                            <td>古老熱帶雨林</td>
+                        </tr>
+                        <tr>
+                            <td><strong>鳥類數量</strong></td>
+                            <td>多種鳥類（薩瓦納特有種）</td>
+                            <td>300+ 種（雨林特有）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>最佳賞鳥方式</strong></td>
+                            <td>導遊森林漫步</td>
+                            <td>樹冠走廊 + 望遠鏡觀察</td>
+                        </tr>
+                        <tr>
+                            <td><strong>其他野生動物</strong></td>
+                            <td>大象、獅子、豹</td>
+                            <td>蝴蝶（600+種）、靈長類</td>
+                        </tr>
+                        <tr>
+                            <td><strong>體驗活動</strong></td>
+                            <td>夜間導覽、清晨漫步</td>
+                            <td>樹冠漫步、夜間生態遊</td>
+                        </tr>
+                        <tr>
+                            <td><strong>最佳造訪季節</strong></td>
+                            <td>11 月 - 3 月（乾季）</td>
+                            <td>12 月 - 2 月（相對乾燥）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>遊覽時長</strong></td>
+                            <td>2-3 天</td>
+                            <td>1-2 天</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Section -->
+    <section id="itinerary" class="itinerary">
+        <div class="container">
+            <h2 class="section-title">推薦 13 天西非之旅</h2>
+
+            <div class="itinerary-item">
+                <span class="day-number">第 1 天</span>
+                <h4>抵達阿克拉 + 休整</h4>
+                <p>抵達迦納首都阿克拉。在五星酒店休息調整時差。下午參觀當地市​​​​​​​​​​​​​​​​
