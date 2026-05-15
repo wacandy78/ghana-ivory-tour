@@ -29,6 +29,8 @@
         .section-title { font-family: 'Crimson Text', serif; font-size: 3rem; color: #1a4d3e; margin-bottom: 50px; text-align: center; position: relative; padding-bottom: 30px; }
         .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: linear-gradient(90deg, transparent, #8b9d7f, transparent); }
         .parks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 80px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+@media (max-width: 768px) { .parks-grid { grid-template-columns: 1fr; gap: 40px; padding: 0; } .container { padding: 0 20px; } section { padding: 60px 20px; } }
+
         .park-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.4s ease; animation: fadeInUp 0.8s ease-out; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .park-card:nth-child(2) { animation-delay: 0.2s; }
