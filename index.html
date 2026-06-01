@@ -1,456 +1,627 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>迦納+象牙海岸賞鳥探險-西非行程</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Dm+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; background: linear-gradient(135deg, #f5f1e8 0%, #f0ebe0 100%); color: #2d2620; line-height: 1.8; overflow-x: hidden; }
-        .hero { min-height: 100vh; background: linear-gradient(135deg, #1a4d3e 0%, #2d7a6b 100%); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 60px 40px; }
-        .hero::before { content: ''; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; top: -200px; right: -200px; animation: float 8s ease-in-out infinite; }
-        .hero::after { content: ''; position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%); border-radius: 50%; bottom: -150px; left: -100px; }
-        @keyframes float { 0%, 100% { transform: translateY(0px) translateX(0px); } 50% { transform: translateY(-30px) translateX(20px); } }
-        .hero-content { position: relative; z-index: 2; text-align: center; max-width: 800px; animation: slideUp 1s ease-out; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-        .hero h1 { font-family: 'Crimson Text', serif; font-size: 4rem; color: #fff; margin-bottom: 20px; font-weight: 700; letter-spacing: -1px; }
-        .hero p { font-size: 1.3rem; color: rgba(255,255,255,0.9); margin-bottom: 40px; font-weight: 300; }
-        .cta-button { display: inline-block; background: #f4d9a6; color: #1a4d3e; padding: 16px 48px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; font-family: 'DM Sans', sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); background: #fff; }
-        nav { position: fixed; top: 0; width: 100%; padding: 20px 40px; background: rgba(26, 77, 62, 0.95); backdrop-filter: blur(10px); z-index: 100; display: flex; justify-content: space-between; align-items: center; }
-        nav .logo { font-family: 'Crimson Text', serif; font-size: 1.8rem; color: #f4d9a6; font-weight: 700; }
-        nav a { color: rgba(255,255,255,0.8); text-decoration: none; margin-left: 40px; transition: color 0.3s ease; }
-        nav a:hover { color: #f4d9a6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-        section { padding: 100px 40px; }
-        .section-title { font-family: 'Crimson Text', serif; font-size: 3rem; color: #1a4d3e; margin-bottom: 50px; text-align: center; position: relative; padding-bottom: 30px; }
-        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: linear-gradient(90deg, transparent, #8b9d7f, transparent); }
-        .parks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 80px; max-width: 1200px; margin-left: auto; margin-right: auto; }
-@media (max-width: 768px) { .parks-grid { grid-template-columns: 1fr; gap: 40px; padding: 0; } .container { padding: 0 20px; } section { padding: 60px 20px; } }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>West Africa · 西非生態探險 — 迦納 × 象牙海岸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Serif+TC:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0A3D2B;
+    --bg-2: #082E20;
+    --paper: #F4EED8;
+    --ink: #12200F;
+    --muted: rgba(244,238,216,0.55);
+    --muted-dark: rgba(18,32,15,0.55);
+    --rule: rgba(244,238,216,0.13);
+    --rule-dark: rgba(18,32,15,0.12);
+    --accent: #E85D1A;
+    --accent-deep: #C44A10;
+    --serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+    --serif-tc: 'Noto Serif TC', serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background: var(--bg);
+    color: var(--paper);
+    font-family: var(--serif-tc);
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img{max-width:100%;display:block;width:100%;height:100%;object-fit:cover}
+  a{color:inherit;text-decoration:none}
 
-        .park-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.4s ease; animation: fadeInUp 0.8s ease-out; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .park-card:nth-child(2) { animation-delay: 0.2s; }
-        .park-card:hover { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-        .park-image { width: 100%; height: 300px; background: linear-gradient(135deg, #2d7a6b, #1a4d3e); position: relative; overflow: hidden; }
-        .park-image img { width: 100%; height: 100%; object-fit: cover; }
-        .park-image::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(26,77,62,0.3), transparent); }
-        .park-content { padding: 40px; }
-        .park-content h3 { font-family: 'Crimson Text', serif; font-size: 2.2rem; color: #1a4d3e; margin-bottom: 15px; }
-        .bird-count { display: inline-block; background: #f0ebe0; color: #8b6f47; padding: 8px 16px; border-radius: 30px; font-size: 0.9rem; font-weight: 600; margin-bottom: 20px; }
-        .park-description { color: #555; margin-bottom: 20px; line-height: 1.8; }
-        .highlight-features { display: flex; flex-wrap: wrap; gap: 10px; margin: 25px 0; }
-        .feature-tag { background: #1a4d3e; color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; }
-        .bird-highlights { background: #f9f6f0; padding: 20px; border-left: 4px solid #8b9d7f; border-radius: 4px; margin: 20px 0; }
-        .bird-highlights p { font-size: 0.95rem; color: #555; margin-bottom: 8px; }
-        .bird-highlights p:last-child { margin-bottom: 0; }
-        .itinerary { background: linear-gradient(135deg, #f5f1e8, #e8ddd2); padding: 80px 40px; }
-        .itinerary-item { background: white; padding: 30px; margin-bottom: 30px; border-radius: 8px; border-left: 4px solid #8b9d7f; transition: all 0.3s ease; }
-        .itinerary-item:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.1); transform: translateX(10px); }
-        .day-number { display: inline-block; background: #1a4d3e; color: white; padding: 8px 16px; border-radius: 20px; font-weight: 600; margin-bottom: 10px; font-size: 0.9rem; }
-        .itinerary-item h4 { font-family: 'Crimson Text', serif; font-size: 1.5rem; color: #1a4d3e; margin-bottom: 10px; }
-        .itinerary-item p { color: #666; line-height: 1.8; }
-        .contact { text-align: center; padding: 80px 40px; background: linear-gradient(135deg, #1a4d3e, #2d7a6b); color: white; }
-        .contact h2 { font-family: 'Crimson Text', serif; font-size: 2.8rem; margin-bottom: 20px; }
-        .contact p { font-size: 1.1rem; margin-bottom: 40px; opacity: 0.95; }
-        footer { background: #0d2818; color: rgba(255,255,255,0.8); text-align: center; padding: 30px; font-size: 0.95rem; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .hero p { font-size: 1.1rem; } nav { padding: 15px 20px; } nav a { margin-left: 20px; display: none; } section { padding: 60px 20px; } .parks-grid { grid-template-columns: 1fr; gap: 40px; } .section-title { font-size: 2rem; } .park-content h3 { font-size: 1.8rem; } }
-    </style>
+  .eyebrow{font-family:var(--sans);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.3em;color:var(--accent)}
+  .eyebrow-dark{color:var(--accent-deep)}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:400;letter-spacing:-0.01em;line-height:1.05}
+  .display{font-size:clamp(56px,9vw,132px);line-height:0.95;font-weight:300}
+  .display em{font-style:italic;font-weight:600;color:var(--accent);font-size:1em;letter-spacing:-0.02em}
+  .h2{font-size:clamp(40px,5.5vw,76px);font-weight:300;line-height:1.02}
+  .h2 em{font-style:italic;color:var(--accent);font-weight:400}
+  .h3{font-size:clamp(28px,3vw,40px);font-weight:400;line-height:1.15}
+  .lead{font-family:var(--serif-tc);font-size:18px;line-height:1.85;font-weight:400;color:rgba(245,239,228,0.78)}
+  .lead.dark{color:rgba(26,24,20,0.72)}
+  .body{font-size:15.5px;line-height:1.85;color:rgba(245,239,228,0.72)}
+  .body.dark{color:rgba(26,24,20,0.7)}
+  .meta{font-family:var(--sans);font-size:11px;text-transform:uppercase;letter-spacing:0.22em;color:var(--muted)}
+  .meta.dark{color:var(--muted-dark)}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:24px 48px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(10,61,43,0.88),rgba(10,61,43,0));transition:background .3s}
+  nav.scrolled{background:rgba(10,61,43,0.93);backdrop-filter:blur(16px);padding:16px 48px;border-bottom:1px solid var(--rule)}
+  @media(max-width:768px){nav,nav.scrolled{padding:16px 24px}}
+  .brand{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:0.02em}
+  .brand em{font-style:italic;color:var(--accent);font-weight:400}
+  .nav-links{display:flex;gap:36px;list-style:none}
+  .nav-links a{font-family:var(--sans);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.22em;color:var(--paper);position:relative;transition:color .25s}
+  .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  .nav-links a:hover{color:var(--accent)}
+  .nav-links a:hover::after{transform:scaleX(1)}
+  @media(max-width:768px){.nav-links{display:none}}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:0 48px 80px;overflow:hidden}
+  @media(max-width:768px){.hero{padding:0 24px 60px}}
+  .hero-bg{position:absolute;inset:0;background-image:url('https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8823.jpeg');background-size:cover;background-position:center;filter:brightness(0.5) contrast(1.05) saturate(0.85);z-index:0}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,46,32,0.5) 0%,rgba(8,46,32,0.72) 35%,rgba(8,46,32,0.88) 65%,rgba(8,46,32,0.98) 100%)}
+  .hero-inner{position:relative;z-index:2;max-width:1400px;margin:0 auto;width:100%}
+  .hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:36px}
+  .hero-eyebrow::before{content:"";width:48px;height:1px;background:var(--accent)}
+  .hero-eyebrow .num{font-family:var(--serif);font-style:italic;color:var(--paper);font-size:14px;opacity:0.7}
+  .display .line{display:block}
+  .hero p.lead{max-width:580px;margin-top:40px;font-size:19px}
+  .hero-meta-row{display:flex;gap:64px;flex-wrap:wrap;margin-top:64px;padding-top:32px;border-top:1px solid var(--rule)}
+  .hero-meta-row > div .meta{margin-bottom:8px}
+  .hero-meta-row > div .val{font-family:var(--serif);font-size:32px;font-weight:400;line-height:1;color:var(--paper)}
+  .hero-meta-row > div .val em{font-style:italic;color:var(--accent)}
+
+  section{padding:140px 48px;position:relative}
+  @media(max-width:768px){section{padding:80px 24px}}
+  .wrap{max-width:1400px;margin:0 auto}
+  .section-head{display:grid;grid-template-columns:200px 1fr;gap:64px;margin-bottom:96px;align-items:start}
+  @media(max-width:900px){.section-head{grid-template-columns:1fr;gap:24px;margin-bottom:56px}}
+  .section-head .col-left .eyebrow{display:block;margin-bottom:12px}
+  .section-head .col-left .chap{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--muted)}
+  .section-head.dark .col-left .chap{color:var(--muted-dark)}
+  .section-head h2{max-width:900px}
+  .section-head .desc{margin-top:32px;max-width:640px}
+
+  /* PARKS / HIGHLIGHTS */
+  .highlights{background:var(--bg);border-bottom:1px solid var(--rule)}
+  .city-list{display:grid;grid-template-columns:1fr;gap:0}
+  .city{display:grid;grid-template-columns:100px 1fr 1.2fr;gap:64px;padding:56px 0;border-top:1px solid var(--rule);align-items:center;transition:padding .3s}
+  .city:last-child{border-bottom:1px solid var(--rule)}
+  .city:hover{padding-left:16px}
+  @media(max-width:900px){.city{grid-template-columns:1fr;gap:24px;padding:40px 0}.city:hover{padding-left:0}}
+  .city-num{font-family:var(--serif);font-size:56px;font-weight:300;color:var(--accent);font-style:italic;line-height:1}
+  .city-info h3{margin-bottom:8px}
+  .city-info .country{font-family:var(--sans);font-size:11px;text-transform:uppercase;letter-spacing:0.25em;color:var(--muted);margin-bottom:16px}
+  .city-info .country .flag{color:var(--accent);margin-right:8px}
+  .city-desc{font-size:15.5px;line-height:1.8;color:rgba(245,239,228,0.7)}
+
+  /* ITINERARY */
+  .itinerary{background:var(--paper);color:var(--ink)}
+  .itinerary .h2{color:var(--ink)}
+  .itinerary .section-head .col-left .eyebrow{color:var(--accent-deep)}
+  .itinerary .section-head .col-left .chap{color:var(--muted-dark)}
+  .itinerary .desc.lead{color:rgba(26,24,20,0.72)}
+  .itinerary .h2 em{color:var(--accent-deep)}
+  .day-row{display:grid;grid-template-columns:120px 1fr 1.4fr;gap:64px;padding:48px 0;border-top:1px solid var(--rule-dark);align-items:start}
+  .day-row:last-child{border-bottom:1px solid var(--rule-dark)}
+  @media(max-width:900px){.day-row{grid-template-columns:1fr;gap:20px;padding:36px 0}}
+  .day-marker .num{font-family:var(--serif);font-size:48px;font-weight:300;line-height:1;color:var(--ink)}
+  .day-marker .num em{font-style:italic;color:var(--accent-deep)}
+  .day-marker .label{font-family:var(--sans);font-size:10px;text-transform:uppercase;letter-spacing:0.25em;color:var(--muted-dark);margin-top:12px;display:block}
+  .day-body h4{font-family:var(--serif);font-size:26px;font-weight:500;line-height:1.2;color:var(--ink);margin-bottom:14px}
+  .day-body .loc{font-family:var(--sans);font-size:11px;text-transform:uppercase;letter-spacing:0.25em;color:var(--accent-deep);margin-bottom:16px;display:inline-flex;align-items:center;gap:10px}
+  .day-body .loc::before{content:"";width:8px;height:1px;background:var(--accent-deep)}
+  .day-body p{font-size:15.5px;line-height:1.85;color:rgba(26,24,20,0.7)}
+  .day-image{aspect-ratio:4/3;background-size:cover;background-position:center;filter:contrast(1.05) saturate(0.95);overflow:hidden}
+  @media(max-width:900px){.day-image{aspect-ratio:16/10}}
+  .day-image img{width:100%;height:100%;object-fit:cover}
+
+  /* divider */
+  .border-divider{text-align:center;padding:56px 0;border-top:1px solid var(--rule-dark);border-bottom:1px solid var(--rule-dark);margin:56px 0}
+  .border-divider p.eyebrow-dark{font-family:var(--serif);font-size:24px;font-weight:400;font-style:italic;color:var(--accent-deep);margin-bottom:10px;letter-spacing:0}
+  .border-divider p.sub{font-size:15px;color:rgba(26,24,20,0.6)}
+
+  /* STAYS */
+  .stays{background:var(--bg-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .stay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:64px 48px}
+  @media(max-width:900px){.stay-grid{grid-template-columns:1fr;gap:48px}}
+  .stay{display:flex;flex-direction:column;gap:24px}
+  .stay-img{aspect-ratio:16/10;overflow:hidden;filter:contrast(1.05) saturate(0.9);transition:filter .4s}
+  .stay:hover .stay-img{filter:contrast(1.1) saturate(1) brightness(1.05)}
+  .stay-num{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:18px;margin-bottom:8px}
+  .stay h4{font-family:var(--serif);font-size:30px;font-weight:400;line-height:1.2;color:var(--paper);margin-bottom:12px}
+  .stay .stay-meta{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--rule)}
+  .stay .stay-meta span{font-family:var(--sans);font-size:11px;text-transform:uppercase;letter-spacing:0.22em;color:var(--muted)}
+  .stay .stay-meta span em{color:var(--accent);font-style:normal}
+  .stay p{font-size:15px;line-height:1.8;color:rgba(245,239,228,0.7)}
+
+  /* EXPERIENCES */
+  .experiences{background:var(--paper);color:var(--ink)}
+  .experiences .h2{color:var(--ink)}
+  .experiences .h2 em{color:var(--accent-deep)}
+  .experiences .col-left .eyebrow{color:var(--accent-deep)}
+  .experiences .col-left .chap{color:var(--muted-dark)}
+  .experiences .desc.lead{color:rgba(26,24,20,0.72)}
+  .exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(26,24,20,0.12);border:1px solid rgba(26,24,20,0.12)}
+  @media(max-width:768px){.exp-grid{grid-template-columns:1fr}}
+  .exp{background:var(--paper);padding:56px 48px;display:flex;flex-direction:column;transition:background .25s}
+  .exp:hover{background:#EFE7D6}
+  @media(max-width:768px){.exp{padding:40px 28px}}
+  .exp .exp-num{font-family:var(--serif);font-style:italic;font-size:28px;color:var(--accent-deep);margin-bottom:24px}
+  .exp h4{font-family:var(--serif);font-size:30px;font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:16px}
+  .exp p{font-size:15.5px;line-height:1.85;color:rgba(26,24,20,0.68)}
+
+  /* FOOTER */
+  footer{background:var(--bg-2);padding:96px 48px 32px;border-top:1px solid var(--rule)}
+  @media(max-width:768px){footer{padding:64px 24px 32px}}
+  .foot-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:80px;padding-bottom:64px;border-bottom:1px solid var(--rule);margin-bottom:32px}
+  @media(max-width:768px){.foot-top{grid-template-columns:1fr;gap:48px}}
+  .foot-brand{font-family:var(--serif);font-size:40px;font-weight:300;line-height:1.1;margin-bottom:24px}
+  .foot-brand em{font-style:italic;color:var(--accent)}
+  .foot-top p{font-size:15px;line-height:1.8;color:rgba(245,239,228,0.6);max-width:420px}
+  .foot-col h6{font-family:var(--sans);font-size:11px;text-transform:uppercase;letter-spacing:0.25em;color:var(--accent);margin-bottom:20px}
+  .foot-col ul{list-style:none}
+  .foot-col li{font-size:14.5px;line-height:2;color:rgba(245,239,228,0.65);transition:color .2s}
+  .foot-col li:hover{color:var(--paper)}
+  .foot-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--sans);font-size:10px;text-transform:uppercase;letter-spacing:0.25em;color:rgba(245,239,228,0.4)}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+</style>
 </head>
 <body>
-    <nav>
-        <div class="logo">🦅 西非賞鳥探險</div>
+
+<nav id="nav">
+  <div class="brand">West <em>Africa</em></div>
+  <ul class="nav-links">
+    <li><a href="#parks">公園景點</a></li>
+    <li><a href="#itinerary">行程</a></li>
+    <li><a href="#stays">住宿</a></li>
+    <li><a href="#experiences">體驗</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <span class="eyebrow">A Journey · MMXXVI</span>
+      <span class="num">N° 02</span>
+    </div>
+    <h1 class="display">
+      <span class="line">穿越<em>雨林</em>,</span>
+      <span class="line">抵達<em>潟湖</em>。</span>
+    </h1>
+    <p class="lead">十五天，從迦納的薩瓦納草原啟程，跨越國界，沿著象牙海岸的世界遺產與大西洋潟湖一路向南——一場融合野生動物、歷史文化與都市探索的深度西非旅程。</p>
+    <div class="hero-meta-row">
+      <div><div class="meta">行程</div><div class="val"><em>15</em> 天</div></div>
+      <div><div class="meta">生態</div><div class="val">賞鳥 <em>×</em> 野生</div></div>
+      <div><div class="meta">國家</div><div class="val">GH <em>×</em> CI</div></div>
+      <div><div class="meta">規模</div><div class="val">生態<em>深度遊</em></div></div>
+    </div>
+  </div>
+</header>
+
+<!-- PARKS -->
+<section class="highlights" id="parks">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="col-left">
+        <span class="eyebrow">Chapter I</span>
+        <span class="chap">— 三大公園與文化地標</span>
+      </div>
+      <div>
+        <h2 class="h2">草原、<em>雨林</em>,<br>與歷史的重量。</h2>
+        <p class="desc lead">從迦納北部的薩瓦納到南部的熱帶雨林，從奴隸貿易遺址到象牙海岸的宗教奇跡——這趟旅程穿越了生態與人文的多重維度。</p>
+      </div>
+    </div>
+    <div class="city-list">
+      <div class="city reveal">
+        <div class="city-num">I.</div>
+        <div class="city-info">
+          <div class="country"><span class="flag">●</span>GHANA · 北部</div>
+          <h3 class="h3">莫宗瑞亞國家公園</h3>
+        </div>
+        <p class="city-desc">西非最大的國家公園，坐落迦納北部薩瓦納地帶。茂密森林與遼闊草原交織，孕育鷹鷲、蒼鷺、蜂虎與非洲雕等珍稀猛禽。住在 Zaina Lodge 野奢木屋，清晨 5:30 由專業導遊帶入深林，與野生動物同呼吸。</p>
+      </div>
+      <div class="city reveal">
+        <div class="city-num">II.</div>
+        <div class="city-info">
+          <div class="country"><span class="flag">●</span>GHANA · 中南部</div>
+          <h3 class="h3">卡庫姆國家公園</h3>
+        </div>
+        <p class="city-desc">超過 300 種鳥類棲居的熱帶雨林，以世界知名的 7 條懸空走廊震撼旅人——在距地面 27 公尺的樹冠層，與翠鳥、蜂虎、夜鷲零距離相遇。夜間生態探險更打開另一個維度的雨林世界。</p>
+      </div>
+      <div class="city reveal">
+        <div class="city-num">III.</div>
+        <div class="city-info">
+          <div class="country"><span class="flag">●</span>GHANA · 海岸</div>
+          <h3 class="h3">Cape Coast Castle</h3>
+        </div>
+        <p class="city-desc">17 世紀的海岸奴隸堡，UNESCO 世界遺產。地下牢房、見證廳與紀念空間，讓每一位造訪者靜默凝視大西洋奴隸貿易留下的歷史創傷——這是認識迦納、也認識人性的必要一課。</p>
+      </div>
+      <div class="city reveal">
+        <div class="city-num">IV.</div>
+        <div class="city-info">
+          <div class="country"><span class="flag">●</span>CÔTE D'IVOIRE · 政治首都</div>
+          <h3 class="h3">Yamoussokro 聖殿大教堂</h3>
+        </div>
+        <p class="city-desc">世界第五大天主教堂矗立於象牙海岸政治首都，宏偉的玻璃穹頂與精美彩繪玻璃融合非洲元素與歐洲古典。無論信仰背景，這座建築都能讓人在光影之中感受到某種壯闊的靜謐。</p>
+      </div>
+      <div class="city reveal">
+        <div class="city-num">V.</div>
+        <div class="city-info">
+          <div class="country"><span class="flag">●</span>CÔTE D'IVOIRE · 阿比讓</div>
+          <h3 class="h3">Banco 國家公園 × 阿比讓</h3>
+        </div>
+        <p class="city-desc">繁華都市邊緣的城市熱帶雨林，200 餘種西非鳥類的棲地。同一座城市，白天是叢林鶲鳥與太陽鳥的世界，入夜是摩天樓與潟湖夜燈並存的西非經濟樞紐脈動。</p>
+      </div>
+      <div class="city reveal">
+        <div class="city-num">VI.</div>
+        <div class="city-info">
+          <div class="country"><span class="flag">●</span>CÔTE D'IVOIRE · 東南海岸</div>
+          <h3 class="h3">Assinie 海濱</h3>
+        </div>
+        <p class="city-desc">大西洋與潟湖之間的靜謐沙洲，魚鷹、翠鳥與鸕鷀在晨光中掠過水面。這裡是行程從野外探險轉換至悠閒度假的溫柔停頓，也是整趟旅程中，屬於海洋的段落。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="itinerary" id="itinerary">
+  <div class="wrap">
+    <div class="section-head dark">
+      <div class="col-left">
+        <span class="eyebrow eyebrow-dark">Chapter II</span>
+        <span class="chap">— 旅程日誌</span>
+      </div>
+      <div>
+        <h2 class="h2">十五日 <em>日誌</em>。</h2>
+        <p class="desc lead">從阿克拉啟程，深入薩瓦納草原與熱帶雨林，再跨越國界抵達象牙海岸的海灘、都市與宗教奇跡——一趟跨越兩國的完整西非深度旅程。</p>
+      </div>
+    </div>
+    <div class="day-list">
+
+      <div class="day-row reveal">
+        <div class="day-marker"><div class="num">Day <em>01</em></div><span class="label">抵達</span></div>
+        <div class="day-body">
+          <div class="loc">阿克拉 · Accra</div>
+          <h4>抵達迦納首都</h4>
+          <p>抵達迦納首都阿克拉，入住市區四星酒店休息調整時差，養足精神迎接接下來的探索。</p>
+        </div>
+        <div class="day-image"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop" alt="酒店"></div>
+      </div>
+
+      <div class="day-row reveal">
+        <div class="day-marker"><div class="num">Day <em>02</em></div><span class="label">城市</span></div>
+        <div class="day-body">
+          <div class="loc">阿克拉市區</div>
+          <h4>首都脈動</h4>
+          <p>走訪黑星廣場、迦納國家博物館、夸梅·恩克魯瑪紀念公園，前往馬科拉市場感受最真實的阿克拉日常，品嚐道地西非風味。</p>
+        </div>
+        <div class="day-image"><img src="https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=800&h=600&fit=crop" alt="市場"></div>
+      </div>
+
+      <div class="day-row reveal">
+        <div class="day-marker"><div class="num">Day <em>03–04</em></div><span class="label">野外</span></div>
+        <div class="day-body">
+          <div class="loc">莫宗瑞亞國家公園 · Zaina Lodge</div>
+          <h4>薩瓦納深處</h4>
+          <p>飛往迦納北部，入住西非第一座野奢旅館 Zaina Lodge。第一天適應草原環境，傍晚短途漫步；第二天清晨 5:30 由專業導遊帶領深度森林探索，尋覓鷹鷲、蒼鷺、蜂虎與非洲雕。夜間生態導覽體驗黑暗中的薩瓦納。</p>
+        </div>
+        <div class="day-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8823.jpeg" alt="莫宗瑞亞"></div>
+      </div>
+
+      <div class="day-row reveal">
+        <div class="day-marker"><div class="num">Day <em>05</em></div><span class="label">返城</span></div>
+        <div class="day-body">
+          <div class="loc">阿克拉 · 拉巴迪海灘</div>
+          <h4>草原後的海風</h4>
+          <p>從莫宗瑞亞飛回阿克拉，入住四星酒店稍作休整。傍晚前往拉巴迪海灘，體驗非洲海灘休閒文化，讓自己從草原節奏轉換至海邊步調。</p>
+        </div>
+        <div class="day-image"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop" alt="海灘"></div>
+      </div>
+
+      <div class="day-row reveal">
+        <div class="day-marker"><div class="num">Day <em>06</em></div><span class="label">雨林</span></div>
+        <div class="day-body">
+          <div class="loc">卡庫姆國家公園</div>
+          <h4>樹冠上的世界</h4>
+          <p>走入卡庫姆雨林，踏上 333 公尺長的懸空走廊，在距地面 27 公尺的樹冠層與鳥類同高。使用高倍望遠鏡觀察稀有鳥種，入夜後參加夜間生態探險，探索迦納雨林的另一個維度。</p>
+        </div>
+        <div class="day-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8818.jpeg" alt="卡庫姆"></div>
+      </div>
+
+      <div class="day-row reveal">
+        <div class="day-marker"><div class="num">Day <em>07</em></div><span class="label">歷史</span></div>
+        <div class="day-body">
+          <div class="loc">Cape Coast Castle · 世界遺產</div>
+          <h4>歷史的重量</h4>
+          <p>前往 Cape Coast Castle，走入地下牢房與見證廳，在大西洋海風中凝視奴隸貿易留下的歷史創傷。專業導遊帶領深入了解迦納文化記憶，傍晚整理旅程照片，分享賞鳥故事。</p>
+        </div>
+        <div class="day-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8825.jpeg" alt="Cape Coast"></div>
+      </div>
+
+      <div class="day-row reveal">
+        <div class="day-marker"><div class="num">Day <em>08</em></div><span class="label">收尾</span></div>
+        <div class="day-body">
+          <div class="loc">阿克拉 · 出發</div>
+          <h4>迦納的告別</h4>
+          <p>最後的購物與漫步，選購道地伴手禮。根據航班時間前往阿克拉機場，結束迦納段，準備跨越國界進入象牙海岸。</p>
+        </div>
+        <div class="day-image"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop" alt="機場"></div>
+      </div>
+
+      <!-- divider -->
+      <div class="border-divider">
+        <p class="eyebrow-dark">✈ 跨境延伸</p>
+        <p class="sub">從迦納前往象牙海岸，探索西非的多元風景</p>
+      </div>
+
+      <div class="day-row reveal">
+        <div class="day-marker"><div class="num">Day <em>09</em></div><span class="label">海濱</span></div>
+        <div class="day-body">
+          <div class="loc">Assinie · 象牙海岸</div>
+          <h4>潟湖的時間</h4>
+          <p>短途班機落地象牙海岸，專車直抵濱海小鎮 Assinie。金黃沙灘、清澈大西洋海水，在海灘漫步中觀察鸕鷀、蒼鷺與海鷲。入住精品度假村，讓整趟旅程的節奏在這裡完全慢下來。</p>
+        </div>
+        <div class="day-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8819.jpeg" alt="Assinie"></div>
+      </div>
+
+      <div class="day-row reveal">
+        <div class="day-marker"><div class="num">Day <em>10</em></div><span class="label">生態</span></div>
+        <div class="day-body">
+          <div class="loc">Assinie 潟湖</div>
+          <h4>沿海生態探險</h4>
+          <p>清晨在潟湖觀賞遷徙水鳥，下午探索沿海濕地與沙灘棲息地。魚鷹、翠鳥與稀有沙灘鳶在光線中掠過水面。可安排當地導遊進行生態導覽，了解象牙海岸獨特的生物多樣性。</p>
+        </div>
+        <div class="day-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8822.jpeg" alt="度假村"></div>
+      </div>
+
+      <div class="day-row reveal">
+        <div class="day-marker"><div class="num">Day <em>11</em></div><span class="label">都會</span></div>
+        <div class="day-body">
+          <div class="loc">Abidjan · 象牙海岸</div>
+          <h4>西非的摩天樓</h4>
+          <p>驅車或乘船前往 Abidjan（約 1–2 小時），入住市中心四星飯店。下午在 Plateau 商業區散步，欣賞現代建築與潟湖景觀並存的城市剪影，傍晚在碧湖畔餐廳享用晚餐。</p>
+        </div>
+        <div class="day-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8820.jpeg" alt="Abidjan"></div>
+      </div>
+
+      <div class="day-row reveal">
+        <div class="day-marker"><div class="num">Day <em>12</em></div><span class="label">城市森林</span></div>
+        <div class="day-body">
+          <div class="loc">Banco 國家公園</div>
+          <h4>都市裡的綠肺</h4>
+          <p>走入 Abidjan 郊外的 Banco 國家公園，繁華城市包裹著原始熱帶雨林。叢林鶲鳥、太陽鳥、西非鸚鵡在林間活躍，是在都市環境中進行賞鳥的獨特體驗，也是象牙海岸自然保護的縮影。</p>
+        </div>
+        <div class="day-image"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop" alt="森林"></div>
+      </div>
+
+      <div class="day-row reveal">
+        <div class="day-marker"><div class="num">Day <em>13</em></div><span class="label">政治</span></div>
+        <div class="day-body">
+          <div class="loc">Yamoussoukro · 政治首都</div>
+          <h4>朝聖之路</h4>
+          <p>驅車前往象牙海岸政治首都 Yamoussoukro（約 2–3 小時），參觀象牙海岸國會大廈，了解這個國家的政治中心脈絡。品嚐當地特色晚餐，感受不同於 Abidjan 的安靜首都氣質。</p>
+        </div>
+        <div class="day-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8826.jpeg" alt="教堂"></div>
+      </div>
+
+      <div class="day-row reveal">
+        <div class="day-marker"><div class="num">Day <em>14</em></div><span class="label">聖殿</span></div>
+        <div class="day-body">
+          <div class="loc">和平之后聖殿</div>
+          <h4>光落下的地方</h4>
+          <p>由導遊帶領走入世界第五大天主教堂——聖殿聖母大教堂。宏偉穹頂、彩繪玻璃、穿透光線，無論信仰背景，建築本身便足以令人屏息。下午返回 Abidjan，晚間享用告別晚宴。</p>
+        </div>
+        <div class="day-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8826.jpeg" alt="聖殿"></div>
+      </div>
+
+      <div class="day-row reveal">
+        <div class="day-marker"><div class="num">Day <em>15</em></div><span class="label">歸程</span></div>
+        <div class="day-body">
+          <div class="loc">ABJ → 返台</div>
+          <h4>帶著故事返航</h4>
+          <p>最後的購物與漫步，整理相機裡兩個國家的色彩與故事。根據航班時間前往 Abidjan 國際機場（Félix Houphouët-Boigny 機場），結束這場跨越迦納與象牙海岸、融合賞鳥、探險、海灘與文化的難忘西非之旅。</p>
+        </div>
+        <div class="day-image"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop" alt="機場"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STAYS -->
+<section class="stays" id="stays">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="col-left">
+        <span class="eyebrow">Chapter III</span>
+        <span class="chap">— 夜晚的歸宿</span>
+      </div>
+      <div>
+        <h2 class="h2">精選<em>住宿</em>，<br>五種西非夜晚。</h2>
+        <p class="desc lead">從阿克拉城市酒店到薩瓦納野奢木屋，從象牙海岸潟湖度假村到 Abidjan 商業區四星，每一晚都是旅程本身的一部分。</p>
+      </div>
+    </div>
+    <div class="stay-grid">
+
+      <div class="stay reveal">
+        <div class="stay-img"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=500&fit=crop" alt="Accra 酒店"></div>
         <div>
-            <a href="#parks">公園介紹</a>
-            <a href="#itinerary">行程安排</a>
-            <a href="#accommodation">住宿</a>
+          <div class="stay-num">N° I</div>
+          <h4>Accra · 首都城市酒店</h4>
+          <div class="stay-meta">
+            <span>🇬🇭 GHANA</span>
+            <span>Day 01–02 · <em>2 NIGHTS</em></span>
+          </div>
+          <p>位於迦納首都市中心的四星酒店，靠近國家博物館、市場與海灘。是抵達與返程前的穩定起點，提供舒適環境調整長途旅行的時差。</p>
         </div>
-    </nav>
+      </div>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>西非生態探險之旅</h1>
-            <p>同時體驗生態景觀與人文風情的深度旅遊</p>
+      <div class="stay reveal">
+        <div class="stay-img"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8811.jpeg" alt="Zaina Lodge"></div>
+        <div>
+          <div class="stay-num">N° II</div>
+          <h4>Zaina Lodge · 野奢帳篷木屋</h4>
+          <div class="stay-meta">
+            <span>🇬🇭 GHANA · 莫宗瑞亞</span>
+            <span>Day 03–04 · <em>2 NIGHTS</em></span>
+          </div>
+          <p>西非第一座野奢旅館，24 間帳篷式木屋坐落草原之上。從陽台直接觀賞野生動物，專業生態導遊帶領清晨與夜間探險——奢華與原始的完美平衡。</p>
         </div>
-    </section>
+      </div>
 
-    <section id="parks">
-        <h2 class="section-title">三大國家公園與文化景點</h2>
-        <div class="parks-grid">
-            <!-- Mole National Park -->
-            <div class="park-card">
-                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8823.jpeg" alt="莫宗瑞亞國家公園"></div>
-                <div class="park-content">
-                    <h3>莫宗瑞亞國家公園</h3>
-                    <span class="bird-count">🦅 多樣化鳥類生態</span>
-                    <div class="park-description">位於迦納北部薩瓦納地區，莫宗瑞亞是西非最大的國家公園。園內茂密的森林和遼闊的草原為眾多野生動物提供了完美的棲息地。</div>
-                    <div class="bird-highlights">
-                        <p><strong>主要鳥類：</strong></p>
-                        <p>✓ 各種鷹鷲與獵鷹<br>✓ 鸛鳥和蒼鷺<br>✓ 五彩斑斕的蜂虎<br>✓ 珍稀的戰鷲和非洲雕</p>
-                    </div>
-                    <div class="highlight-features">
-                        <span class="feature-tag">🏕️ Zaina Lodge</span>
-                        <span class="feature-tag">🚶 專業導遊</span>
-                        <span class="feature-tag">📍 隱蔽觀察點</span>
-                        <span class="feature-tag">🌙 夜間探險</span>
-                    </div>
-                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                        <strong>體驗亮點：</strong> 每天清晨由專業導遊帶領進行深度森林漫步和野生動物觀察。園內設有多個隱蔽的觀鳥點，距離大象和其他野生動物保持安全距離。住在優雅的樹屋，盡享自然與奢華的完美結合。
-                    </div>
-                </div>
-            </div>
-
-            <!-- Accra Slave Castle -->
-            <div class="park-card">
-                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8825.jpeg" alt="Accra 奴隸堡"></div>
-                <div class="park-content">
-                    <h3>Cape Coast Castle - 阿克拉奴隸堡</h3>
-                    <span class="bird-count">🏛️ 歷史文化遺跡</span>
-                    <div class="park-description">位於迦納阿克拉附近的 Cape Coast Castle 是西非最重要的歷史遺跡之一。這座 17 世紀的堡壘見證了奴隸貿易的黑暗歷史，現已成為緬懷歷史、尊重人權的重要紀念地。</div>
-                    <div class="bird-highlights">
-                        <p><strong>參訪亮點：</strong></p>
-                        <p>✓ 奴隸地下牢房<br>✓ 歷史展覽與檔案<br>✓ 海濱要塞建築<br>✓ 教育與反思空間</p>
-                    </div>
-                    <div class="highlight-features">
-                        <span class="feature-tag">📜 世界遺產</span>
-                        <span class="feature-tag">🏰 古堡建築</span>
-                        <span class="feature-tag">📚 歷史博物館</span>
-                        <span class="feature-tag">🌊 海濱景觀</span>
-                    </div>
-                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                        <strong>體驗亮點：</strong> 參加專業導遊帶領的參訪，深入瞭解大西洋奴隸貿易的歷史。參觀地下牢房、見證廳和紀念區，感受歷史的重量。這是認識迦納文化與人性尊嚴的必訪之地。
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kakum National Park -->
-            <div class="park-card">
-                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8818.jpeg" alt="卡庫姆國家公園"></div>
-                <div class="park-content">
-                    <h3>卡庫姆國家公園</h3>
-                    <span class="bird-count">🦅 超過 300 種鳥類</span>
-                    <div class="park-description">位於迦納中南部的雨林地區，卡庫姆以其令人驚嘆的 7 條懸空走廊聞名世界。走在距離森林地面 27 公尺高的樹頂上，俯瞰這片古老的雨林生態系統。</div>
-                    <div class="bird-highlights">
-                        <p><strong>主要鳥類：</strong></p>
-                        <p>✓ 華麗的翠鳥<br>✓ 多彩的蜂虎<br>✓ 稀有的夜鷲<br>✓ 吸蜜鳥和啄木鳥</p>
-                    </div>
-                    <div class="highlight-features">
-                        <span class="feature-tag">🌳 樹冠走廊</span>
-                        <span class="feature-tag">🔭 遠距望遠鏡觀察</span>
-                        <span class="feature-tag">🌙 夜間生態探險</span>
-                        <span class="feature-tag">📸 攝影天堂</span>
-                    </div>
-                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                        <strong>體驗亮點：</strong> 穿梭於 333 公尺長的懸空走廊，與鳥類在樹冠層相遇。使用高倍望遠鏡從訪客中心觀察稀有鳥種，或參加引人入勝的夜間生態探險。園內設有露營設施和樹屋住宿，深度體驗原始雨林。
-                    </div>
-                </div>
-            </div>
-
-            <!-- Yamoussokro Basilica -->
-            <div class="park-card">
-                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8826.jpeg" alt="Yamoussokro 大教堂"></div>
-                <div class="park-content">
-                    <h3>Basilica of Our Lady of Peace - Yamoussokro 聖殿大教堂</h3>
-                    <span class="bird-count">⛪ 宗教建築奇跡</span>
-                    <div class="park-description">位於象牙海岸 Yamoussokro 的聖殿聖母大教堂是世界第五大教堂，以其宏偉的建築與精美的設計聞名。這座現代宗教建築融合了非洲元素與歐洲古典風格，是信仰與藝術的完美結合。</div>
-                    <div class="bird-highlights">
-                        <p><strong>參訪亮點：</strong></p>
-                        <p>✓ 世界第五大教堂<br>✓ 宏偉的玻璃穹頂<br>✓ 精美的彩繪玻璃<br>✓ 寧靜的禮拜空間</p>
-                    </div>
-                    <div class="highlight-features">
-                        <span class="feature-tag">⛪ 宗教建築</span>
-                        <span class="feature-tag">🎨 藝術與設計</span>
-                        <span class="feature-tag">📷 攝影勝地</span>
-                        <span class="feature-tag">🙏 靈性體驗</span>
-                    </div>
-                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                        <strong>體驗亮點：</strong> 進入寧靜的教堂內部，欣賞宏偉的建築與精美的彩繪玻璃。從穹頂向下望，光線透過玻璃灑落，創造神聖的氛圍。無論信仰背景如何，都能感受到建築的壯觀與藝術的美妙。
-                    </div>
-                </div>
-            </div>
-
-            <!-- Banco National Park -->
-            <div class="park-card">
-                <div class="park-image"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=300&fit=crop" alt="Banco 國家公園"></div>
-                <div class="park-content">
-                    <h3>Banco 國家公園 - 象牙海岸城市森林</h3>
-                    <span class="bird-count">🦅 200+ 種鳥類</span>
-                    <div class="park-description">位於象牙海岸首都 Abidjan 郊外的獨特城市國家公園。這片古老的熱帶雨林被現代城市包圍，卻保留了原始的生態系統，是都市邊緣的綠色寶藏。</div>
-                    <div class="bird-highlights">
-                        <p><strong>主要鳥類：</strong></p>
-                        <p>✓ 各種叢林鶲鳥<br>✓ 五彩的太陽鳥<br>✓ 西非特有的鸚鵡<br>✓ 稀有的夜鷲與蒼鷺</p>
-                    </div>
-                    <div class="highlight-features">
-                        <span class="feature-tag">🌳 城市邊緣森林</span>
-                        <span class="feature-tag">🥾 自然步道</span>
-                        <span class="feature-tag">🐒 靈長類動物</span>
-                        <span class="feature-tag">📸 攝影機會</span>
-                    </div>
-                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                        <strong>體驗亮點：</strong> 在繁華都市中體驗原始森林生態。園內有多條自然步道供散步與賞鳥，靈長類動物經常在樹上活動。是了解象牙海岸自然保護工作的獨特窗口，也是城市生態旅遊的典範。
-                    </div>
-                </div>
-            </div>
-
-            <!-- Abidjan Cathedral -->
-            <div class="park-card">
-                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8824.jpeg" alt="Abidjan 聖保羅大教堂"></div>
-                <div class="park-content">
-                    <h3>St. Paul's Cathedral - Abidjan 聖保羅大教堂</h3>
-                    <span class="bird-count">⛪ 城市文化地標</span>
-                    <div class="park-description">位於象牙海岸首都 Abidjan 的聖保羅大教堂是城市的宗教與文化象徵。這座現代建築融合了當代設計與傳統宗教元素，在城市天際線中顯得格外醒目，是 Abidjan 不可錯過的景點。</div>
-                    <div class="bird-highlights">
-                        <p><strong>參訪亮點：</strong></p>
-                        <p>✓ 現代建築傑作<br>✓ 獨特的鐘塔設計<br>✓ 城市全景視角<br>✓ 文化交流中心</p>
-                    </div>
-                    <div class="highlight-features">
-                        <span class="feature-tag">⛪ 城市地標</span>
-                        <span class="feature-tag">🏗️ 現代建築</span>
-                        <span class="feature-tag">🌃 城市天際線</span>
-                        <span class="feature-tag">🎭 文化活動</span>
-                    </div>
-                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                        <strong>體驗亮點：</strong> 登上教堂高塔，俯瞰 Abidjan 的城市全景與潟湖景觀。參加當地文化活動或音樂表演，體驗 Abidjan 作為西非文化中心的活力。教堂經常舉辦展覽與文化講座。
-                    </div>
-                </div>
-            </div>
+      <div class="stay reveal">
+        <div class="stay-img"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8822.jpeg" alt="Assinie 度假村"></div>
+        <div>
+          <div class="stay-num">N° III</div>
+          <h4>Assinie Mafia Resort · 海灘度假村</h4>
+          <div class="stay-meta">
+            <span>🇨🇮 CÔTE D'IVOIRE</span>
+            <span>Day 09–10 · <em>2 NIGHTS</em></span>
+          </div>
+          <p>象牙海岸東南部頂級海灘度假村，坐擁私人海灘與潟湖景觀。水上活動、SPA、海鮮料理，是行程中段從野外探險過渡至悠閒模式的溫柔轉折。</p>
         </div>
+      </div>
 
-        <div style="text-align: center; margin: 80px 0 60px; padding: 40px; background: linear-gradient(135deg, #f0ebe0, #e8ddd2); border-radius: 12px;">
-            <h3 style="font-family: 'Crimson Text', serif; font-size: 2.2rem; color: #1a4d3e; margin-bottom: 15px;">延伸探險</h3>
-            <p style="color: #666; font-size: 1.1rem; margin-bottom: 0;">從迦納跨越邊界，深入象牙海岸的海灘與城市魅力</p>
+      <div class="stay reveal">
+        <div class="stay-img"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8950.jpeg" alt="Abidjan 酒店"></div>
+        <div>
+          <div class="stay-num">N° IV</div>
+          <h4>Abidjan City Palace · 都市四星</h4>
+          <div class="stay-meta">
+            <span>🇨🇮 CÔTE D'IVOIRE · Abidjan</span>
+            <span>Day 11–13 · <em>2 NIGHTS</em></span>
+          </div>
+          <p>Abidjan 現代奢華酒店，俯瞰城市天際線與潟湖。鄰近美術館、購物中心與夜生活區，是探索西非最繁華都市的理想基地。</p>
         </div>
+      </div>
 
-        <div class="parks-grid">
-            <div class="park-card">
-                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8819.jpeg" alt="Assinie海灘"></div>
-                <div class="park-content">
-                    <h3>Assinie - 象牙海岸海灘度假</h3>
-                    <span class="bird-count">🏖️ 沿海生態天堂</span>
-                    <div class="park-description">Assinie 是象牙海岸東南部的靜謐海濱小鎮，擁有金黃色沙灘和清澈的大西洋海水。這個度假勝地結合了自然美景與文化特色，是逃離城市喧囂的理想之地。</div>
-                    <div class="bird-highlights">
-                        <p><strong>沿海鳥類：</strong></p>
-                        <p>✓ 鸕鷀和蒼鷺群<br>✓ 魚鷹和海鷲<br>✓ 翠鳥和潛水鳥<br>✓ 沙灘鳶（稀有）</p>
-                    </div>
-                    <div class="highlight-features">
-                        <span class="feature-tag">🦀 瀉湖生態</span>
-                        <span class="feature-tag">🐚 沿海濕地</span>
-                        <span class="feature-tag">🌅 日出觀賞</span>
-                        <span class="feature-tag">🏨 度假村</span>
-                    </div>
-                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                        <strong>體驗亮點：</strong> 清晨在潟湖觀賞遷徙水鳥，漫步沙灘尋覓沿海物種。下午在海邊度假村放鬆，享受新鮮海鮮與冷飲。Assinie 是從野生動物探險到悠閒度假的完美轉銜。
-                    </div>
-                </div>
-            </div>
-            <div class="park-card">
-                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8820.jpeg" alt="Abidjan都市景觀"></div>
-                <div class="park-content">
-                    <h3>Abidjan - 象牙海岸現代都市</h3>
-                    <span class="bird-count">🏙️ 西非文化樞紐</span>
-                    <div class="park-description">Abidjan 是象牙海岸最大的城市，也是西非最現代化的都市之一。這座城市坐落在美麗的潟湖之上，融合了當代建築、豐富的文化與充滿活力的夜生活。</div>
-                    <div class="bird-highlights">
-                        <p><strong>城市自然體驗：</strong></p>
-                        <p>✓ Banco 國家公園城市森林<br>✓ 潟湖水鳥觀察<br>✓ 市郊自然保護區<br>✓ 都市公園棲息地</p>
-                    </div>
-                    <div class="highlight-features">
-                        <span class="feature-tag">🎨 當代美術館</span>
-                        <span class="feature-tag">🛍️ 現代購物中心</span>
-                        <span class="feature-tag">🍽️ 美食之都</span>
-                        <span class="feature-tag">🌃 夜生活</span>
-                    </div>
-                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                        <strong>體驗亮點：</strong> 參訪美術館與文化中心探索象牙海岸藝術。在 Banco 國家公園進行城市邊緣賞鳥，發現潟湖邊的野生動物。享受國際美食與購物，感受西非最繁華的都市活力。
-                    </div>
-                </div>
-            </div>
+      <div class="stay reveal">
+        <div class="stay-img"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8951.jpeg" alt="Yamoussoukro 飯店"></div>
+        <div>
+          <div class="stay-num">N° V</div>
+          <h4>Yamoussoukro Basilica Hotel · 首都地標</h4>
+          <div class="stay-meta">
+            <span>🇨🇮 CÔTE D'IVOIRE · 政治首都</span>
+            <span>Day 13–14 · <em>1 NIGHT</em></span>
+          </div>
+          <p>象牙海岸政治首都的代表性地標飯店，距世界第五大教堂咫尺之遙。曾是國家級接待與會議的重要場域，承載著這座首都獨特的歷史分量。</p>
         </div>
-    </section>
+      </div>
 
-    <section id="accommodation">
-        <h2 class="section-title">精選住宿</h2>
-        <div class="parks-grid">
-            <!-- Accra Hotel -->
-            <div class="park-card">
-                <div class="park-image"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=300&fit=crop" alt="Accra 五星酒店"></div>
-                <div class="park-content">
-                    <h3>Accra Luxury Hotel - 迦納首都歡迎住宿</h3>
-                    <span class="bird-count">🏨 四星城市酒店</span>
-                    <div class="park-description">位於迦納首都阿克拉的現代五星酒店。提供舒適優雅的住宿環境，靠近市中心景點與購物區。是抵達迦納和返程前的理想休息地點。</div>
-                    <div class="bird-highlights">
-                        <p><strong>設施與服務：</strong></p>
-                        <p>✓ 現代化豪華房間<br>✓ 室內游泳池<br>✓ 健身房與 SPA<br>✓ 多家餐廳酒吧<br>✓ 24 小時禮賓服務</p>
-                    </div>
-                    <div class="highlight-features">
-                        <span class="feature-tag">🏙️ 城市中心位置</span>
-                        <span class="feature-tag">🍽️ 國際美食</span>
-                        <span class="feature-tag">🏊 游泳池</span>
-                        <span class="feature-tag">💆 SPA 服務</span>
-                    </div>
-                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                        <strong>住宿體驗：</strong> 在迦納首都舒適休息，調整時差，準備冒險。酒店靠近國家博物館、市場和海灘，提供城市探索的便利。
-                    </div>
-                </div>
-            </div>
+    </div>
+  </div>
+</section>
 
-            <!-- Zaina Lodge -->
-            <div class="park-card">
-                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8811.jpeg" alt="Zaina Lodge"></div>
-                <div class="park-content">
-                    <h3>Zaina Lodge - 野奢度假屋</h3>
-                    <span class="bird-count">🏕️ 豪華帳篷住宿</span>
-                    <div class="park-description">Zaina Lodge 是西非第一座野奢旅館，以24間帳篷式木屋、草原景觀、野生動物體驗與高端接待服務帶領旅人感受西非最原始的國家公園。</div>
-                    <div class="bird-highlights">
-                        <p><strong>設施與服務：</strong></p>
-                        <p>✓ 豪華樹屋套房<br>✓ 私人露台與觀景點<br>✓ 專業生態導遊<br>✓ 全天餐飲服務<br>✓ 清晨與夜間導覽</p>
-                    </div>
-                    <div class="highlight-features">
-                        <span class="feature-tag">🏕️ 木屋建築</span>
-                        <span class="feature-tag">🍽️ 高級餐廳</span>
-                        <span class="feature-tag">🔥 篝火夜間</span>
-                        <span class="feature-tag">🌿 生態體驗</span>
-                    </div>
-                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                        <strong>住宿體驗：</strong> 從樹屋陽台直接觀賞野生動物，享受頂級的生態旅遊體驗。餐點採用當地食材烹飪，提供國際與非洲菜餚。專業導遊帶領清晨與夜間的賞鳥探險。
-                    </div>
-                </div>
-            </div>
+<!-- EXPERIENCES -->
+<section class="experiences" id="experiences">
+  <div class="wrap">
+    <div class="section-head dark">
+      <div class="col-left">
+        <span class="eyebrow eyebrow-dark">Chapter IV</span>
+        <span class="chap">— 只有在這裡</span>
+      </div>
+      <div>
+        <h2 class="h2">不只是<em>賞鳥</em>，<br>是一趟完整的西非。</h2>
+        <p class="desc lead">這趟旅程的核心不在打卡——而在於草原清晨的靜默、樹冠走廊的俯仰、奴隸堡的沉默，以及潟湖邊的某個黃昏。</p>
+      </div>
+    </div>
+    <div class="exp-grid">
+      <div class="exp reveal">
+        <div class="exp-num">N° 01</div>
+        <h4>清晨 5:30 的薩瓦納</h4>
+        <p>Zaina Lodge 的專業生態導遊在黎明前帶你走入莫宗瑞亞草原，第一道光落下之前，鷹鷲已在空中盤旋——這個時刻，是整趟旅程最常被回憶起的一幕。</p>
+      </div>
+      <div class="exp reveal">
+        <div class="exp-num">N° 02</div>
+        <h4>樹冠走廊的高度</h4>
+        <p>踏上卡庫姆 27 公尺高的懸空走廊，與鳥類在同一個高度相遇。腳下是古老雨林，眼前是翠鳥掠過的瞬間——這是迦納獨有的、用身體感受生態的方式。</p>
+      </div>
+      <div class="exp reveal">
+        <div class="exp-num">N° 03</div>
+        <h4>Cape Coast 的沉默</h4>
+        <p>走入奴隸堡的地下牢房，在黑暗中感受歷史的重量。這是旅程中最安靜、也最必要的一刻——不是觀光，而是一種對歷史的正視與尊重。</p>
+      </div>
+      <div class="exp reveal">
+        <div class="exp-num">N° 04</div>
+        <h4>西非美食日日嚐</h4>
+        <p>迦納的 Jollof Rice、炸魚與 Kelewele 甜蕉；象牙海岸的 Attiéké 木薯飯、Kedjenou 燉雞與新鮮海鮮——每日午餐都是用舌尖認識西非的另一種方式。</p>
+      </div>
+      <div class="exp reveal">
+        <div class="exp-num">N° 05</div>
+        <h4>夜間生態探險</h4>
+        <p>莫宗瑞亞與卡庫姆的夜晚，與白天截然不同的物種在黑暗中現身。夜鷲的眼睛、穿山甲的蹤影、草原上的遠處燈火——黑暗本身，是另一種生態的入口。</p>
+      </div>
+      <div class="exp reveal">
+        <div class="exp-num">N° 06</div>
+        <h4>潟湖邊的停頓</h4>
+        <p>Assinie 的清晨，獨木舟滑過潟湖水面，魚鷹在棕櫚樹影中掠過。這裡沒有行程表，只有陽光、白沙、海風，以及讓身心從探險模式緩緩鬆開的時間。</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <!-- Assinie Beach Resort -->
-            <div class="park-card">
-                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8822.jpeg" alt="Assinie 度假村"></div>
-                <div class="park-content">
-                    <h3>Assinie Mafia Resort - 象牙海岸海灘度假村</h3>
-                    <span class="bird-count">🏖️ 五星海灘度假</span>
-                    <div class="park-description">Assinie Mafia Resort 是象牙海岸東南部的頂級海灘度假村，坐擁金黃色沙灘和清澈海水。融合了現代建築與傳統西非文化，提供度假與生態旅遊的完美結合。</div>
-                    <div class="bird-highlights">
-                        <p><strong>設施與服務：</strong></p>
-                        <p>✓ 海景豪華房間<br>✓ 私人海灘區域<br>✓ 瀉湖生態導遊<br>✓ 水上活動<br>✓ SPA 與健身設施</p>
-                    </div>
-                    <div class="highlight-features">
-                        <span class="feature-tag">🌊 私人海灘</span>
-                        <span class="feature-tag">🏊 游泳池與水療</span>
-                        <span class="feature-tag">🍽️ 海鮮餐廳</span>
-                        <span class="feature-tag">🌅 日落酒吧</span>
-                    </div>
-                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                        <strong>住宿體驗：</strong> 享受海灘度假的奢華，同時進行沿海生態探險。度假村提供水上運動、spa 服務，以及與當地漁民互動的文化體驗。清晨可在泻湖進行賞鳥活動。
-                    </div>
-                </div>
-            </div>
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">West <em>Africa</em><br>Eco Journey</div>
+        <p>跨越迦納和象牙海岸，探索野生動物、海灘度假與都市文化的完美結合——一趟同時體驗生態景觀與人文風情的深度旅遊。</p>
+      </div>
+      <div class="foot-col">
+        <h6>行程</h6>
+        <ul>
+          <li><a href="#parks">三大公園景點</a></li>
+          <li><a href="#itinerary">完整 15 天日誌</a></li>
+          <li><a href="#stays">精選住宿</a></li>
+          <li><a href="#experiences">特色體驗</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>聯絡</h6>
+        <ul>
+          <li>Email · hello@example.com</li>
+          <li>隱私政策</li>
+          <li>聯絡我們</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <div>© MMXXVI · West Africa Eco Journey</div>
+      <div>Ghana × Côte d'Ivoire</div>
+    </div>
+  </div>
+</footer>
 
-            <!-- Abidjan Luxury Hotel -->
-            <div class="park-card">
-                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8950.jpeg" alt="Abidjan 五星酒店"></div>
-                <div class="park-content">
-                    <h3>Abidjan City Palace - 象牙海岸都市奢華</h3>
-                    <span class="bird-count">🏙️ 四星城市酒店</span>
-                    <div class="park-description">位於 Abidjan 的現代奢華酒店，將當代建築與西非設計完美融合。從房間可俯瞰城市景觀，提供西非頂級的都市旅遊體驗。</div>
-                    <div class="bird-highlights">
-                        <p><strong>設施與服務：</strong></p>
-                        <p>✓ 市景豪華房<br>✓ 米其林等級餐廳<br>✓ 露天游泳池<br>✓ 商務與會議設施<br>✓ 24 小時禮賓服務</p>
-                    </div>
-                    <div class="highlight-features">
-                        <span class="feature-tag">🏢 現代建築</span>
-                        <span class="feature-tag">🍽️ 國際美食</span>
-                        <span class="feature-tag">🎭 夜生活與酒吧</span>
-                        <span class="feature-tag">💼 商務設施</span>
-                    </div>
-                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                        <strong>住宿體驗：</strong> 享受西非最現代化城市的奢華體驗。酒店鄰近美術館、購物中心和夜生活區，是城市探險的理想基地。可在潟湖邊進行賞鳥活動。
-                    </div>
-                </div>
-            </div>
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
 
-            <!-- Yamoussokro Hotel -->
-            <div class="park-card">
-                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8951.jpeg" alt="Yamoussokro 酒店"></div>
-                <div class="park-content">
-                    <h3>Yamoussokro Basilica Hotel - 象牙海岸宗教聖地</h3>
-                    <span class="bird-count">⛪ 文化宗教體驗</span>
-                    <div class="park-description">象牙海岸政治首都亞穆索科的代表性地標飯店。它曾是國家級接待與會議的重要場域之一，也是前總統 Félix Houphouët-Boigny 將家鄉打造為首都過程中的重要建築象徵。</div>
-                    <div class="bird-highlights">
-                        <p><strong>設施與服務：</strong></p>
-                        <p>✓ 舒適優雅房間<br>✓ 大教堂近距離位置<br>✓ 當地文化導遊<br>✓ 傳統象牙海岸美食<br>✓ 國會建築參觀安排</p>
-                    </div>
-                    <div class="highlight-features">
-                        <span class="feature-tag">⛪ 大教堂參訪</span>
-                        <span class="feature-tag">🏛️ 國會參觀</span>
-                        <span class="feature-tag">🎭 文化體驗</span>
-                        <span class="feature-tag">🍽️ 道地美食</span>
-                    </div>
-                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                        <strong>住宿體驗：</strong> 參觀世界第五大教堂——聖殿聖母大教堂（Basilica of Our Lady of Peace），探索象牙海岸的政治與宗教中心。酒店提供國會參觀安排和專業文化導遊。
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="itinerary" class="itinerary">
-        <div class="container=100%">
-            <h2 class="section-title">15天西非生態之旅</h2>
-            <div class="itinerary-item"><span class="day-number">第 1 天</span><h4>抵達阿克拉 + 休整</h4><p>抵達迦納首都阿克拉。在四星酒店休息調整時差。</p></div>
-            <div class="itinerary-item"><span class="day-number">第 2 天</span><h4>阿克拉市區導覽</h4><p>走訪迦納首都阿克拉市區景點（黑星廣場、迦納國家博物館、夸梅·恩克魯瑪紀念公園），前往馬科拉市場品嚐道地美食。</p></div>
-            <div class="itinerary-item"><span class="day-number">第 3、4 天</span><h4>莫宗瑞亞國家公園（Zaina Lodge）</h4><p>飛往莫宗瑞亞。入住 Zaina Lodge，享受野奢木屋住宿。第一天適應環境，下午短途漫步。第二天清晨 5:30 開始專業導遊帶領的深度森林漫步，尋覓鷹鷲、蒼鷺、蜂虎等珍稀鳥類。傍晚參加夜間導覽體驗。</p></div>
-            <div class="itinerary-item"><span class="day-number">第 5 天</span><h4>返回阿克拉市區</h4><p>從莫宗瑞亞飛回阿克拉市區，入住四星酒店稍作休息。傍晚前往拉巴迪海灘體驗非洲海灘休閒文化。 </p></div>
-            <div class="itinerary-item"><span class="day-number">第 6 天</span><h4>卡庫姆國家公園</h4><p>前往卡庫姆國家公園。體驗著名的樹冠走廊——在距離森林地面 27 公尺的懸空走廊上漫步，與鳥類親密接觸。在訪客中心使用高倍望遠鏡觀察雨林上層的稀有鳥種。參加夜間生態探險體驗夜行性鳥類和動物的世界。</p></div>
-            <div class="itinerary-item"><span class="day-number">第 7 天</span><h4>海濱古堡 + 攝影回顧</h4><p>前往附近的海角岸奴隸堡（Cape Coast Castle），探索迦納歷史文化遺產。傍晚整理旅程照片，與導遊分享賞鳥發現與故事。</p></div>
-            <div class="itinerary-item"><span class="day-number">第 8 天</span><h4>整裝出發</h4><p>進行最後的購物與漫步。根據航班時間前往機場，結束這趟難忘的迦納賞鳥之旅。</p></div>
-            <div style="text-align: center; margin: 60px 0; padding: 40px; background: white; border-radius: 12px; border: 2px dashed #8b9d7f;"><p style="font-size: 1.3rem; font-family: 'Crimson Text', serif; color: #1a4d3e; margin-bottom: 10px;font-weight: bold;">✈️ 跨境延伸</p><p style="color: #666; font-size: 1rem;">從迦納前往象牙海岸，探索西非的多元風景</p></div>
-            <div class="itinerary-item"><span class="day-number">第 9 天</span><h4>前往象牙海岸 - Assinie 海灘度假</h4><p>從迦納乘坐短途班機前往象牙海岸，落地後包車前往濱海小鎮 Assinie。這個靜謐的海濱度假勝地擁有金黃色沙灘和清澈的大西洋海水，是賞鳥者的天堂。在海灘漫步時，可以觀察到多種沿海鳥類，包括鸕鷀、蒼鷺和海鷲。入住精品度假村，享受海邊的寧靜與悠閒。</p></div>
-            <div class="itinerary-item"><span class="day-number">第 10 天</span><h4>Assinie 生態探險</h4><p>全天在 Assinie 體驗多樣化的生態環境。清晨在瀉湖（lagoon）觀賞水鳥和候鳥，下午探索沿海濕地和沙灘棲息地。Assinie 鄰近的濕地和森林邊界是多種鳥類的棲息地，包括魚鷹、翠鳥和稀有的沙灘鳶。可安排當地導遊進行生態導覽，學習象牙海岸獨特的生物多樣性。</p></div>
-            <div class="itinerary-item"><span class="day-number">第 11 天</span><h4>Assinie 前往 Abidjan</h4><p>離開海灘度假區，驅車或乘船前往象牙海岸首都 Abidjan（約 1-2 小時車程）。抵達後入住市中心四星飯店，享受現代都市風景。下午在 Abidjan 的兩湖區（Plateau）散步，欣賞建築與文化風景。傍晚在碧湖畔餐廳享用晚餐，體驗西非最繁華城市的夜生活。</p></div>
-            <div class="itinerary-item"><span class="day-number">第 12 天</span><h4>Abidjan 文化與自然體驗</h4><p>前往 Abidjan 郊外的自然保護區 Banco 國家公園，探索城市邊緣的森林生態。這個國家森林公園內有許多西非本土鳥類，是在都市環境中進行賞鳥的獨特體驗。</p></div>
-            <div class="itinerary-item"><span class="day-number">第 13 天</span><h4>Abidjan → Yamoussokro 政治與宗教朝聖</h4><p>上午驅車前往象牙海岸首都 Yamoussokro（約 2-3 小時車程）。下午遊覽象牙海岸國會大廈（Palais du Gouvernement），瞭解國家的政治中心。品嚐當地特色晚餐。</p></div>
-            <div class="itinerary-item"><span class="day-number">第 14 天</span><h4>Yamoussokro 文化深度探訪</h4><p>上午由導遊帶領參觀世界著名的聖殿聖母大教堂（Basilica of Our Lady of Peace），欣賞其宏偉的建築與宗教藝術。文化導覽，深入瞭解 Yamoussokro 的歷史與象牙海岸的政治文化。下午返回 Abidjan，準備返程。晚間享用告別晚宴。</p></div>
-            <div class="itinerary-item"><span class="day-number">第 15 天</span><h4>返回家鄉</h4><p>進行最後的購物與漫步。根據航班時間前往 Abidjan 國際機場（Félix Houphouët-Boigny 機場），乘坐國際航班返回家鄉。結束這場跨越兩個國家、融合賞鳥、探險、海灘度假與文化體驗的難忘西非之旅。</p></div>
-        </div>
-    </section>
-
-    <section class="contact">
-        <div class="container">
-            <p>跨越迦納和象牙海岸，探索野生動物、海灘度假與都市文化的完美結合</p>
-            <p style="margin-top: 40px; opacity: 0.7;">
-            </p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2027 迦納賞鳥之旅。所有權利保留。| <a href="#" style="color: #f4d9a6; text-decoration: none;">隱私政策</a> | <a href="#" style="color: #f4d9a6; text-decoration: none;">聯絡我們</a></p>
-    </footer>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                }
-            });
-        });
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        document.querySelectorAll('.park-card, .itinerary-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
+
